@@ -1,0 +1,2034 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="sttyle.css">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>SkillTube - Learn While You Watch</title>
+</head>
+
+<body>
+
+    <!-- ========================================================= -->
+    <!-- HEADER -->
+    <!-- ========================================================= -->
+
+    <header>
+
+        <table width="100%">
+            <tr>
+
+                <td width="15%">
+                    <h1>▶ SkillTube</h1>
+                </td>
+
+                <td width="50%">
+
+                    <form onsubmit="searchVideos(event)">
+
+                        <input
+                            type="search"
+                            id="searchInput"
+                            placeholder="Search videos, skills, creators..."
+                            size="60"
+                        >
+
+                        <button type="submit">
+                            Search
+                        </button>
+
+                    </form>
+
+                </td>
+
+                <td width="35%" align="right">
+
+                    <button onclick="openCreateMenu()">
+                        + Create
+                    </button>
+
+                    <button onclick="showNotifications()">
+                        🔔
+                    </button>
+
+                    <button onclick="showProfile()">
+                        👤 Saketh
+                    </button>
+
+                </td>
+
+            </tr>
+        </table>
+
+        <hr>
+
+    </header>
+
+
+    <!-- ========================================================= -->
+    <!-- MAIN NAVIGATION -->
+    <!-- ========================================================= -->
+
+    <nav>
+
+        <h3>Navigation</h3>
+
+        <ul>
+
+            <li>
+                <button onclick="showHome()">
+                    🏠 Home
+                </button>
+            </li>
+
+            <li>
+                <button onclick="showTrending()">
+                    🔥 Trending
+                </button>
+            </li>
+
+            <li>
+                <button onclick="showSubscriptions()">
+                    📺 Subscriptions
+                </button>
+            </li>
+
+            <li>
+                <button onclick="showLearning()">
+                    🧠 My Learning
+                </button>
+            </li>
+
+            <li>
+                <button onclick="showHistory()">
+                    🕘 History
+                </button>
+            </li>
+
+            <li>
+                <button onclick="showWatchLater()">
+                    ⏰ Watch Later
+                </button>
+            </li>
+
+        </ul>
+
+        <hr>
+
+        <h3>Explore Skills</h3>
+
+        <ul>
+
+            <li>
+                <button onclick="filterSkill('Python')">
+                    Python
+                </button>
+            </li>
+
+            <li>
+                <button onclick="filterSkill('AI')">
+                    Artificial Intelligence
+                </button>
+            </li>
+
+            <li>
+                <button onclick="filterSkill('DSA')">
+                    DSA
+                </button>
+            </li>
+
+            <li>
+                <button onclick="filterSkill('Web Development')">
+                    Web Development
+                </button>
+            </li>
+
+            <li>
+                <button onclick="filterSkill('SQL')">
+                    SQL
+                </button>
+            </li>
+
+        </ul>
+
+    </nav>
+
+
+    <hr>
+
+
+    <!-- ========================================================= -->
+    <!-- MAIN CONTENT -->
+    <!-- ========================================================= -->
+
+    <main id="mainContent">
+
+        <!-- ===================================================== -->
+        <!-- HERO -->
+        <!-- ===================================================== -->
+
+        <section>
+
+            <h2>
+                Welcome to SkillTube 🚀
+            </h2>
+
+            <p>
+                Don't just watch videos.
+                <strong>Build skills while watching.</strong>
+            </p>
+
+            <p>
+                Your videos become your personalized learning journey.
+            </p>
+
+            <button onclick="startLearningJourney()">
+                Start My Learning Journey
+            </button>
+
+        </section>
+
+
+        <hr>
+
+
+        <!-- ===================================================== -->
+        <!-- DAILY LEARNING -->
+        <!-- ===================================================== -->
+
+        <section>
+
+            <h2>🎯 Your Daily Learning Mission</h2>
+
+            <article>
+
+                <h3>
+                    Today's Goal
+                </h3>
+
+                <p>
+                    Complete 3 Python challenges.
+                </p>
+
+                <progress
+                    id="dailyProgress"
+                    value="1"
+                    max="3">
+                </progress>
+
+                <p>
+                    <span id="dailyProgressText">
+                        1 / 3 completed
+                    </span>
+                </p>
+
+                <button onclick="completeDailyMission()">
+                    Complete Mission
+                </button>
+
+            </article>
+
+        </section>
+
+
+        <hr>
+
+
+        <!-- ===================================================== -->
+        <!-- SKILL JOURNEY -->
+        <!-- ===================================================== -->
+
+        <section>
+
+            <h2>🧠 Continue Your Skill Journey</h2>
+
+            <article>
+
+                <h3>Python → Advanced Python</h3>
+
+                <p>
+                    Progress:
+                </p>
+
+                <progress
+                    value="65"
+                    max="100">
+                </progress>
+
+                <p>
+                    65% completed
+                </p>
+
+                <button onclick="openSkillJourney('Python')">
+                    Continue Journey
+                </button>
+
+            </article>
+
+
+            <article>
+
+                <h3>AI Engineering</h3>
+
+                <p>
+                    Progress:
+                </p>
+
+                <progress
+                    value="32"
+                    max="100">
+                </progress>
+
+                <p>
+                    32% completed
+                </p>
+
+                <button onclick="openSkillJourney('AI')">
+                    Continue Journey
+                </button>
+
+            </article>
+
+        </section>
+
+
+        <hr>
+
+
+        <!-- ===================================================== -->
+        <!-- VIDEO SECTION -->
+        <!-- ===================================================== -->
+
+        <section>
+
+            <h2 id="sectionTitle">
+                Recommended For You
+            </h2>
+
+            <div id="videoContainer">
+
+                <!-- VIDEO 1 -->
+
+                <article class="video-card">
+
+                    <figure>
+
+                        <video
+                            width="320"
+                            height="180"
+                            controls
+                            preload="metadata">
+
+                            <source
+                                src=""
+                                type="video/mp4">
+
+                            Your browser does not support video.
+
+                        </video>
+
+                        <figcaption>
+                            Python Logic Building
+                        </figcaption>
+
+                    </figure>
+
+                    <h3>
+                        Stop Memorizing Python.
+                        Start Thinking Like a Programmer.
+                    </h3>
+
+                    <p>
+                        CodeMaster
+                    </p>
+
+                    <p>
+                        245K views • 2 days ago
+                    </p>
+
+                    <p>
+                        🐍 Python
+                        🧠 Logic
+                        🎯 Beginner
+                    </p>
+
+                    <button
+                        onclick="openVideo(
+                        'Stop Memorizing Python',
+                        'CodeMaster',
+                        'Python'
+                        )">
+
+                        Watch
+
+                    </button>
+
+                    <button
+                        onclick="saveVideo(
+                        'Stop Memorizing Python'
+                        )">
+
+                        📌 Save
+
+                    </button>
+
+                    <button
+                        onclick="addToLearning(
+                        'Stop Memorizing Python'
+                        )">
+
+                        🧠 Add to Learning
+
+                    </button>
+
+                </article>
+
+
+                <!-- VIDEO 2 -->
+
+                <article class="video-card">
+
+                    <figure>
+
+                        <video
+                            width="320"
+                            height="180"
+                            controls>
+
+                            <source
+                                src=""
+                                type="video/mp4">
+
+                        </video>
+
+                        <figcaption>
+                            DSA Sliding Window
+                        </figcaption>
+
+                    </figure>
+
+                    <h3>
+                        Sliding Window Explained Through Real Problems
+                    </h3>
+
+                    <p>
+                        AlgoMaster
+                    </p>
+
+                    <p>
+                        180K views • 5 days ago
+                    </p>
+
+                    <p>
+                        🧩 DSA
+                        🪟 Sliding Window
+                    </p>
+
+                    <button
+                        onclick="openVideo(
+                        'Sliding Window Explained',
+                        'AlgoMaster',
+                        'DSA'
+                        )">
+
+                        Watch
+
+                    </button>
+
+                    <button
+                        onclick="saveVideo(
+                        'Sliding Window Explained'
+                        )">
+
+                        📌 Save
+
+                    </button>
+
+                    <button
+                        onclick="addToLearning(
+                        'Sliding Window Explained'
+                        )">
+
+                        🧠 Add to Learning
+
+                    </button>
+
+                </article>
+
+
+                <!-- VIDEO 3 -->
+
+                <article class="video-card">
+
+                    <figure>
+
+                        <video
+                            width="320"
+                            height="180"
+                            controls>
+
+                            <source
+                                src=""
+                                type="video/mp4">
+
+                        </video>
+
+                        <figcaption>
+                            AI Engineering
+                        </figcaption>
+
+                    </figure>
+
+                    <h3>
+                        How AI Engineers Actually Build AI Applications
+                    </h3>
+
+                    <p>
+                        AI Labs
+                    </p>
+
+                    <p>
+                        520K views • 1 week ago
+                    </p>
+
+                    <p>
+                        🤖 AI
+                        🧠 LLM
+                        🚀 Engineering
+                    </p>
+
+                    <button
+                        onclick="openVideo(
+                        'How AI Engineers Build AI Applications',
+                        'AI Labs',
+                        'AI'
+                        )">
+
+                        Watch
+
+                    </button>
+
+                    <button
+                        onclick="saveVideo(
+                        'How AI Engineers Build AI Applications'
+                        )">
+
+                        📌 Save
+
+                    </button>
+
+                    <button
+                        onclick="addToLearning(
+                        'How AI Engineers Build AI Applications'
+                        )">
+
+                        🧠 Add to Learning
+
+                    </button>
+
+                </article>
+
+
+                <!-- VIDEO 4 -->
+
+                <article class="video-card">
+
+                    <figure>
+
+                        <video
+                            width="320"
+                            height="180"
+                            controls>
+
+                            <source
+                                src=""
+                                type="video/mp4">
+
+                        </video>
+
+                        <figcaption>
+                            SQL
+                        </figcaption>
+
+                    </figure>
+
+                    <h3>
+                        SQL Queries You Should Know Before Your First Job
+                    </h3>
+
+                    <p>
+                        Data Academy
+                    </p>
+
+                    <p>
+                        95K views • 3 days ago
+                    </p>
+
+                    <p>
+                        🗄️ SQL
+                        💼 Jobs
+                    </p>
+
+                    <button
+                        onclick="openVideo(
+                        'SQL Queries You Should Know',
+                        'Data Academy',
+                        'SQL'
+                        )">
+
+                        Watch
+
+                    </button>
+
+                    <button
+                        onclick="saveVideo(
+                        'SQL Queries You Should Know'
+                        )">
+
+                        📌 Save
+
+                    </button>
+
+                    <button
+                        onclick="addToLearning(
+                        'SQL Queries You Should Know'
+                        )">
+
+                        🧠 Add to Learning
+
+                    </button>
+
+                </article>
+
+
+                <!-- VIDEO 5 -->
+
+                <article class="video-card">
+
+                    <figure>
+
+                        <video
+                            width="320"
+                            height="180"
+                            controls>
+
+                            <source
+                                src=""
+                                type="video/mp4">
+
+                        </video>
+
+                        <figcaption>
+                            Web Development
+                        </figcaption>
+
+                    </figure>
+
+                    <h3>
+                        Build a Full Website From Scratch
+                    </h3>
+
+                    <p>
+                        WebDev Pro
+                    </p>
+
+                    <p>
+                        310K views • 4 days ago
+                    </p>
+
+                    <p>
+                        🌐 HTML
+                        ⚡ JavaScript
+                    </p>
+
+                    <button
+                        onclick="openVideo(
+                        'Build a Full Website',
+                        'WebDev Pro',
+                        'Web Development'
+                        )">
+
+                        Watch
+
+                    </button>
+
+                    <button
+                        onclick="saveVideo(
+                        'Build a Full Website'
+                        )">
+
+                        📌 Save
+
+                    </button>
+
+                    <button
+                        onclick="addToLearning(
+                        'Build a Full Website'
+                        )">
+
+                        🧠 Add to Learning
+
+                    </button>
+
+                </article>
+
+
+                <!-- VIDEO 6 -->
+
+                <article class="video-card">
+
+                    <figure>
+
+                        <video
+                            width="320"
+                            height="180"
+                            controls>
+
+                            <source
+                                src=""
+                                type="video/mp4">
+
+                        </video>
+
+                        <figcaption>
+                            Machine Learning
+                        </figcaption>
+
+                    </figure>
+
+                    <h3>
+                        Machine Learning Explained Without Mathematics
+                    </h3>
+
+                    <p>
+                        ML Simplified
+                    </p>
+
+                    <p>
+                        400K views • 2 weeks ago
+                    </p>
+
+                    <p>
+                        🤖 ML
+                        📊 Data
+                    </p>
+
+                    <button
+                        onclick="openVideo(
+                        'Machine Learning Explained',
+                        'ML Simplified',
+                        'AI'
+                        )">
+
+                        Watch
+
+                    </button>
+
+                    <button
+                        onclick="saveVideo(
+                        'Machine Learning Explained'
+                        )">
+
+                        📌 Save
+
+                    </button>
+
+                    <button
+                        onclick="addToLearning(
+                        'Machine Learning Explained'
+                        )">
+
+                        🧠 Add to Learning
+
+                    </button>
+
+                </article>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ========================================================= -->
+    <!-- VIDEO WATCH PAGE -->
+    <!-- ========================================================= -->
+
+    <section id="watchPage" hidden>
+
+        <button onclick="showHome()">
+            ← Back
+        </button>
+
+        <h1 id="watchTitle">
+            Video Title
+        </h1>
+
+        <p id="watchCreator">
+            Creator
+        </p>
+
+
+        <video
+            id="mainVideo"
+            width="800"
+            controls>
+
+            <source
+                src=""
+                type="video/mp4">
+
+            Your browser does not support video.
+
+        </video>
+
+
+        <section>
+
+            <button onclick="likeVideo()">
+                👍 Like
+            </button>
+
+            <button onclick="dislikeVideo()">
+                👎 Dislike
+            </button>
+
+            <button onclick="saveCurrentVideo()">
+                📌 Save
+            </button>
+
+            <button onclick="shareVideo()">
+                🔗 Share
+            </button>
+
+        </section>
+
+
+        <hr>
+
+
+        <!-- ===================================================== -->
+        <!-- UNIQUE LEARN MODE -->
+        <!-- ===================================================== -->
+
+        <section>
+
+            <h2>
+                🧠 Learn Mode
+            </h2>
+
+            <p>
+                Don't just watch this video.
+                Test whether you actually understood it.
+            </p>
+
+            <button onclick="activateLearnMode()">
+                Activate Learn Mode
+            </button>
+
+        </section>
+
+
+        <section id="challengeBox" hidden>
+
+            <h2>
+                🧩 60-Second Challenge
+            </h2>
+
+            <p id="challengeQuestion">
+                What was the main concept explained in this video?
+            </p>
+
+            <textarea
+                id="challengeAnswer"
+                rows="5"
+                cols="80"
+                placeholder="Explain the concept in your own words...">
+            </textarea>
+
+            <br>
+
+            <button onclick="submitChallenge()">
+                Submit Answer
+            </button>
+
+            <p id="challengeResult"></p>
+
+        </section>
+
+
+        <hr>
+
+
+        <!-- ===================================================== -->
+        <!-- VIDEO NOTES -->
+        <!-- ===================================================== -->
+
+        <section>
+
+            <h2>
+                📝 My Notes
+            </h2>
+
+            <textarea
+                id="videoNotes"
+                rows="10"
+                cols="80"
+                placeholder="Write your notes here...">
+            </textarea>
+
+            <br>
+
+            <button onclick="saveNotes()">
+                Save Notes
+            </button>
+
+            <p id="notesStatus"></p>
+
+        </section>
+
+
+        <hr>
+
+
+        <!-- ===================================================== -->
+        <!-- COMMENTS -->
+        <!-- ===================================================== -->
+
+        <section>
+
+            <h2>
+                💬 Comments
+            </h2>
+
+            <form onsubmit="addComment(event)">
+
+                <textarea
+                    id="commentInput"
+                    rows="4"
+                    cols="70"
+                    placeholder="Add a comment...">
+                </textarea>
+
+                <br>
+
+                <button type="submit">
+                    Comment
+                </button>
+
+            </form>
+
+
+            <div id="comments">
+
+                <article>
+
+                    <h4>Rahul</h4>
+
+                    <p>
+                        This explanation finally made the concept clear!
+                    </p>
+
+                </article>
+
+                <article>
+
+                    <h4>Priya</h4>
+
+                    <p>
+                        The challenge at the end is a great idea.
+                    </p>
+
+                </article>
+
+            </div>
+
+        </section>
+
+    </section>
+
+
+    <!-- ========================================================= -->
+    <!-- LEARNING PAGE -->
+    <!-- ========================================================= -->
+
+    <section id="learningPage" hidden>
+
+        <button onclick="showHome()">
+            ← Home
+        </button>
+
+        <h1>
+            🧠 My Learning Dashboard
+        </h1>
+
+
+        <section>
+
+            <h2>
+                Current Streak 🔥
+            </h2>
+
+            <p>
+                <strong id="streak">
+                    7 days
+                </strong>
+            </p>
+
+        </section>
+
+
+        <section>
+
+            <h2>
+                Total Learning Time
+            </h2>
+
+            <p>
+                18 hours 42 minutes
+            </p>
+
+        </section>
+
+
+        <section>
+
+            <h2>
+                Skills You're Building
+            </h2>
+
+            <ul>
+
+                <li>
+                    Python
+                    <progress value="70" max="100"></progress>
+                    70%
+                </li>
+
+                <li>
+                    DSA
+                    <progress value="45" max="100"></progress>
+                    45%
+                </li>
+
+                <li>
+                    AI Engineering
+                    <progress value="32" max="100"></progress>
+                    32%
+                </li>
+
+                <li>
+                    SQL
+                    <progress value="55" max="100"></progress>
+                    55%
+                </li>
+
+            </ul>
+
+        </section>
+
+
+        <section>
+
+            <h2>
+                📚 Videos Added to Learning
+            </h2>
+
+            <ul id="learningList">
+
+                <li>
+                    Python Logic Building
+                </li>
+
+                <li>
+                    Sliding Window Explained
+                </li>
+
+            </ul>
+
+        </section>
+
+    </section>
+
+
+    <!-- ========================================================= -->
+    <!-- HISTORY -->
+    <!-- ========================================================= -->
+
+    <section id="historyPage" hidden>
+
+        <button onclick="showHome()">
+            ← Home
+        </button>
+
+        <h1>
+            🕘 Watch History
+        </h1>
+
+        <ul id="historyList">
+
+            <li>
+                Python Logic Building
+            </li>
+
+            <li>
+                Machine Learning Explained
+            </li>
+
+            <li>
+                SQL Queries You Should Know
+            </li>
+
+        </ul>
+
+    </section>
+
+
+    <!-- ========================================================= -->
+    <!-- WATCH LATER -->
+    <!-- ========================================================= -->
+
+    <section id="watchLaterPage" hidden>
+
+        <button onclick="showHome()">
+            ← Home
+        </button>
+
+        <h1>
+            ⏰ Watch Later
+        </h1>
+
+        <ul id="watchLaterList">
+
+            <li>
+                No videos added yet.
+            </li>
+
+        </ul>
+
+    </section>
+
+
+    <!-- ========================================================= -->
+    <!-- NOTIFICATIONS -->
+    <!-- ========================================================= -->
+
+    <section id="notificationPage" hidden>
+
+        <button onclick="showHome()">
+            ← Home
+        </button>
+
+        <h1>
+            🔔 Notifications
+        </h1>
+
+        <ul>
+
+            <li>
+                CodeMaster uploaded a new Python video.
+            </li>
+
+            <li>
+                Your daily learning mission is waiting.
+            </li>
+
+            <li>
+                You completed a 7-day learning streak! 🔥
+            </li>
+
+        </ul>
+
+    </section>
+
+
+    <!-- ========================================================= -->
+    <!-- PROFILE -->
+    <!-- ========================================================= -->
+
+    <section id="profilePage" hidden>
+
+        <button onclick="showHome()">
+            ← Home
+        </button>
+
+        <h1>
+            👤 Saketh
+        </h1>
+
+        <p>
+            Learning Creator
+        </p>
+
+        <p>
+            Skills:
+            Python • DSA • AI • SQL • Web Development
+        </p>
+
+        <h2>
+            Achievements
+        </h2>
+
+        <ul>
+
+            <li>
+                🔥 7 Day Learning Streak
+            </li>
+
+            <li>
+                🧠 50 Challenges Completed
+            </li>
+
+            <li>
+                📚 25 Hours Learned
+            </li>
+
+            <li>
+                🚀 First Skill Journey Completed
+            </li>
+
+        </ul>
+
+    </section>
+
+
+    <!-- ========================================================= -->
+    <!-- CREATE MENU -->
+    <!-- ========================================================= -->
+
+    <section id="createPage" hidden>
+
+        <button onclick="showHome()">
+            ← Home
+        </button>
+
+        <h1>
+            Create
+        </h1>
+
+        <button onclick="createVideo()">
+            🎥 Upload Video
+        </button>
+
+        <button onclick="createLearningPath()">
+            🧠 Create Skill Journey
+        </button>
+
+        <button onclick="createChallenge()">
+            🧩 Create Challenge
+        </button>
+
+    </section>
+
+
+    <!-- ========================================================= -->
+    <!-- FOOTER -->
+    <!-- ========================================================= -->
+
+    <footer>
+
+        <hr>
+
+        <p>
+            © 2026 SkillTube
+        </p>
+
+        <p>
+            A new way to learn through video.
+        </p>
+
+        <p>
+            About • Terms • Privacy • Help
+        </p>
+
+    </footer>
+
+
+    <!-- ========================================================= -->
+    <!-- JAVASCRIPT -->
+    <!-- ========================================================= -->
+
+    <script>
+
+        /*
+        ============================================================
+        GLOBAL VARIABLES
+        ============================================================
+        */
+
+        let currentVideo = "";
+
+        let currentCreator = "";
+
+        let currentSkill = "";
+
+        let watchHistory = [];
+
+        let savedVideos = [];
+
+        let learningVideos = [];
+
+        let dailyCompleted = 1;
+
+
+        /*
+        ============================================================
+        PAGE CONTROL
+        ============================================================
+        */
+
+        function hideAllPages() {
+
+            document.getElementById("mainContent").hidden = true;
+
+            document.getElementById("watchPage").hidden = true;
+
+            document.getElementById("learningPage").hidden = true;
+
+            document.getElementById("historyPage").hidden = true;
+
+            document.getElementById("watchLaterPage").hidden = true;
+
+            document.getElementById("notificationPage").hidden = true;
+
+            document.getElementById("profilePage").hidden = true;
+
+            document.getElementById("createPage").hidden = true;
+
+        }
+
+
+        function showHome() {
+
+            hideAllPages();
+
+            document.getElementById("mainContent").hidden = false;
+
+        }
+
+
+        /*
+        ============================================================
+        VIDEO WATCHING
+        ============================================================
+        */
+
+        function openVideo(title, creator, skill) {
+
+            currentVideo = title;
+
+            currentCreator = creator;
+
+            currentSkill = skill;
+
+            hideAllPages();
+
+            document.getElementById("watchPage").hidden = false;
+
+            document.getElementById("watchTitle").textContent = title;
+
+            document.getElementById("watchCreator").textContent =
+                creator + " • Skill: " + skill;
+
+
+            if (!watchHistory.includes(title)) {
+
+                watchHistory.push(title);
+
+            }
+
+        }
+
+
+        /*
+        ============================================================
+        LIKE / DISLIKE
+        ============================================================
+        */
+
+        function likeVideo() {
+
+            alert(
+                "You liked: " + currentVideo
+            );
+
+        }
+
+
+        function dislikeVideo() {
+
+            alert(
+                "You disliked: " + currentVideo
+            );
+
+        }
+
+
+        /*
+        ============================================================
+        SAVE VIDEO
+        ============================================================
+        */
+
+        function saveVideo(title) {
+
+            if (!savedVideos.includes(title)) {
+
+                savedVideos.push(title);
+
+                alert(
+                    title + " saved to Watch Later."
+                );
+
+            } else {
+
+                alert(
+                    "This video is already saved."
+                );
+
+            }
+
+        }
+
+
+        function saveCurrentVideo() {
+
+            saveVideo(currentVideo);
+
+        }
+
+
+        /*
+        ============================================================
+        LEARNING SYSTEM
+        ============================================================
+        */
+
+        function addToLearning(title) {
+
+            if (!learningVideos.includes(title)) {
+
+                learningVideos.push(title);
+
+                updateLearningList();
+
+                alert(
+                    title +
+                    " added to your Skill Journey."
+                );
+
+            } else {
+
+                alert(
+                    "Already added to your learning journey."
+                );
+
+            }
+
+        }
+
+
+        function updateLearningList() {
+
+            const list =
+                document.getElementById("learningList");
+
+            list.innerHTML = "";
+
+            learningVideos.forEach(function(video) {
+
+                const item =
+                    document.createElement("li");
+
+                item.textContent = video;
+
+                list.appendChild(item);
+
+            });
+
+        }
+
+
+        function activateLearnMode() {
+
+            document.getElementById(
+                "challengeBox"
+            ).hidden = false;
+
+        }
+
+
+        /*
+        ============================================================
+        CHALLENGE SYSTEM
+        ============================================================
+        */
+
+        function submitChallenge() {
+
+            const answer =
+                document.getElementById(
+                    "challengeAnswer"
+                ).value;
+
+            const result =
+                document.getElementById(
+                    "challengeResult"
+                );
+
+            if (answer.trim() === "") {
+
+                result.textContent =
+                    "Please write your answer first.";
+
+                return;
+
+            }
+
+            result.textContent =
+                "Excellent! You completed the challenge. 🎉";
+
+            dailyCompleted++;
+
+            if (dailyCompleted > 3) {
+
+                dailyCompleted = 3;
+
+            }
+
+            updateDailyProgress();
+
+        }
+
+
+        /*
+        ============================================================
+        DAILY PROGRESS
+        ============================================================
+        */
+
+        function updateDailyProgress() {
+
+            document.getElementById(
+                "dailyProgress"
+            ).value = dailyCompleted;
+
+            document.getElementById(
+                "dailyProgressText"
+            ).textContent =
+                dailyCompleted + " / 3 completed";
+
+        }
+
+
+        function completeDailyMission() {
+
+            if (dailyCompleted < 3) {
+
+                dailyCompleted++;
+
+                updateDailyProgress();
+
+            }
+
+            if (dailyCompleted === 3) {
+
+                alert(
+                    "🎉 Daily Mission Completed!"
+                );
+
+            }
+
+        }
+
+
+        /*
+        ============================================================
+        NOTES
+        ============================================================
+        */
+
+        function saveNotes() {
+
+            const notes =
+                document.getElementById(
+                    "videoNotes"
+                ).value;
+
+            if (notes.trim() === "") {
+
+                document.getElementById(
+                    "notesStatus"
+                ).textContent =
+                    "Write something before saving.";
+
+                return;
+
+            }
+
+            localStorage.setItem(
+                "notes_" + currentVideo,
+                notes
+            );
+
+            document.getElementById(
+                "notesStatus"
+            ).textContent =
+                "Notes saved successfully.";
+
+        }
+
+
+        /*
+        ============================================================
+        COMMENTS
+        ============================================================
+        */
+
+        function addComment(event) {
+
+            event.preventDefault();
+
+            const input =
+                document.getElementById(
+                    "commentInput"
+                );
+
+            const comment =
+                input.value.trim();
+
+            if (comment === "") {
+
+                return;
+
+            }
+
+            const article =
+                document.createElement("article");
+
+            const heading =
+                document.createElement("h4");
+
+            heading.textContent = "Saketh";
+
+            const paragraph =
+                document.createElement("p");
+
+            paragraph.textContent = comment;
+
+            article.appendChild(heading);
+
+            article.appendChild(paragraph);
+
+            document
+                .getElementById("comments")
+                .prepend(article);
+
+            input.value = "";
+
+        }
+
+
+        /*
+        ============================================================
+        SEARCH
+        ============================================================
+        */
+
+        function searchVideos(event) {
+
+            event.preventDefault();
+
+            const search =
+                document.getElementById(
+                    "searchInput"
+                ).value.toLowerCase();
+
+            const cards =
+                document.querySelectorAll(
+                    ".video-card"
+                );
+
+            cards.forEach(function(card) {
+
+                const text =
+                    card.textContent.toLowerCase();
+
+                if (text.includes(search)) {
+
+                    card.hidden = false;
+
+                } else {
+
+                    card.hidden = true;
+
+                }
+
+            });
+
+            document.getElementById(
+                "sectionTitle"
+            ).textContent =
+                "Search Results for: " + search;
+
+        }
+
+
+        /*
+        ============================================================
+        SKILL FILTER
+        ============================================================
+        */
+
+        function filterSkill(skill) {
+
+            showHome();
+
+            const cards =
+                document.querySelectorAll(
+                    ".video-card"
+                );
+
+            cards.forEach(function(card) {
+
+                const text =
+                    card.textContent.toLowerCase();
+
+                if (
+                    text.includes(
+                        skill.toLowerCase()
+                    )
+                ) {
+
+                    card.hidden = false;
+
+                } else {
+
+                    card.hidden = true;
+
+                }
+
+            });
+
+            document.getElementById(
+                "sectionTitle"
+            ).textContent =
+                skill + " Videos";
+
+        }
+
+
+        /*
+        ============================================================
+        LEARNING PAGE
+        ============================================================
+        */
+
+        function showLearning() {
+
+            hideAllPages();
+
+            document.getElementById(
+                "learningPage"
+            ).hidden = false;
+
+        }
+
+
+        function openSkillJourney(skill) {
+
+            alert(
+                "Opening your " +
+                skill +
+                " Skill Journey..."
+            );
+
+            showLearning();
+
+        }
+
+
+        function startLearningJourney() {
+
+            alert(
+                "Your personalized Skill Journey has started! 🚀"
+            );
+
+            showLearning();
+
+        }
+
+
+        /*
+        ============================================================
+        HISTORY
+        ============================================================
+        */
+
+        function showHistory() {
+
+            hideAllPages();
+
+            const list =
+                document.getElementById(
+                    "historyList"
+                );
+
+            list.innerHTML = "";
+
+            if (watchHistory.length === 0) {
+
+                const item =
+                    document.createElement("li");
+
+                item.textContent =
+                    "No watch history.";
+
+                list.appendChild(item);
+
+            } else {
+
+                watchHistory.forEach(
+                    function(video) {
+
+                        const item =
+                            document.createElement("li");
+
+                        item.textContent = video;
+
+                        list.appendChild(item);
+
+                    }
+                );
+
+            }
+
+            document.getElementById(
+                "historyPage"
+            ).hidden = false;
+
+        }
+
+
+        /*
+        ============================================================
+        WATCH LATER
+        ============================================================
+        */
+
+        function showWatchLater() {
+
+            hideAllPages();
+
+            const list =
+                document.getElementById(
+                    "watchLaterList"
+                );
+
+            list.innerHTML = "";
+
+            if (savedVideos.length === 0) {
+
+                const item =
+                    document.createElement("li");
+
+                item.textContent =
+                    "No videos added yet.";
+
+                list.appendChild(item);
+
+            } else {
+
+                savedVideos.forEach(
+                    function(video) {
+
+                        const item =
+                            document.createElement("li");
+
+                        item.textContent = video;
+
+                        list.appendChild(item);
+
+                    }
+                );
+
+            }
+
+            document.getElementById(
+                "watchLaterPage"
+            ).hidden = false;
+
+        }
+
+
+        /*
+        ============================================================
+        TRENDING
+        ============================================================
+        */
+
+        function showTrending() {
+
+            showHome();
+
+            document.getElementById(
+                "sectionTitle"
+            ).textContent =
+                "🔥 Trending Videos";
+
+        }
+
+
+        /*
+        ============================================================
+        SUBSCRIPTIONS
+        ============================================================
+        */
+
+        function showSubscriptions() {
+
+            showHome();
+
+            document.getElementById(
+                "sectionTitle"
+            ).textContent =
+                "📺 Your Subscriptions";
+
+        }
+
+
+        /*
+        ============================================================
+        NOTIFICATIONS
+        ============================================================
+        */
+
+        function showNotifications() {
+
+            hideAllPages();
+
+            document.getElementById(
+                "notificationPage"
+            ).hidden = false;
+
+        }
+
+
+        /*
+        ============================================================
+        PROFILE
+        ============================================================
+        */
+
+        function showProfile() {
+
+            hideAllPages();
+
+            document.getElementById(
+                "profilePage"
+            ).hidden = false;
+
+        }
+
+
+        /*
+        ============================================================
+        CREATE MENU
+        ============================================================
+        */
+
+        function openCreateMenu() {
+
+            hideAllPages();
+
+            document.getElementById(
+                "createPage"
+            ).hidden = false;
+
+        }
+
+
+        function createVideo() {
+
+            alert(
+                "Video upload system would open here."
+            );
+
+        }
+
+
+        function createLearningPath() {
+
+            alert(
+                "Create your own Skill Journey."
+            );
+
+        }
+
+
+        function createChallenge() {
+
+            alert(
+                "Create a challenge for your viewers."
+            );
+
+        }
+
+
+        /*
+        ============================================================
+        SHARE
+        ============================================================
+        */
+
+        function shareVideo() {
+
+            if (
+                navigator.clipboard
+            ) {
+
+                navigator.clipboard.writeText(
+                    window.location.href
+                );
+
+                alert(
+                    "Video link copied!"
+                );
+
+            } else {
+
+                alert(
+                    "Share this video with your friends!"
+                );
+
+            }
+
+        }
+
+
+        /*
+        ============================================================
+        INITIALIZATION
+        ============================================================
+        */
+
+        document.addEventListener(
+            "DOMContentLoaded",
+            function() {
+
+                showHome();
+
+                updateDailyProgress();
+
+            }
+        );
+
+    </script>
+
+</body>
+
+</html>

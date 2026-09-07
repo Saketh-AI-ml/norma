@@ -1,0 +1,1218 @@
+/* =========================================================
+   GLOBAL RESET
+   ========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #0f0f0f;
+    color: #ffffff;
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   GENERAL ELEMENTS
+   ========================================================= */
+
+button,
+input,
+textarea {
+    font-family: inherit;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+hr {
+    border: none;
+    border-top: 1px solid #2a2a2a;
+    margin: 20px 0;
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    background: #0f0f0f;
+    border-bottom: 1px solid #272727;
+
+    padding: 12px 24px;
+}
+
+header table {
+    border-collapse: collapse;
+}
+
+header h1 {
+    font-size: 24px;
+    white-space: nowrap;
+}
+
+header h1:first-letter {
+    color: #ff0033;
+}
+
+
+/* =========================================================
+   SEARCH BAR
+   ========================================================= */
+
+header form {
+    display: flex;
+    justify-content: center;
+}
+
+#searchInput {
+    width: 70%;
+    max-width: 600px;
+
+    padding: 12px 18px;
+
+    background: #121212;
+    color: white;
+
+    border: 1px solid #444;
+    border-radius: 25px 0 0 25px;
+
+    outline: none;
+}
+
+#searchInput:focus {
+    border-color: #3ea6ff;
+}
+
+header form button {
+    padding: 0 22px;
+
+    background: #272727;
+    color: white;
+
+    border-radius: 0 25px 25px 0;
+
+    transition: 0.2s;
+}
+
+header form button:hover {
+    background: #3f3f3f;
+}
+
+
+/* =========================================================
+   HEADER BUTTONS
+   ========================================================= */
+
+header td:last-child button {
+    background: transparent;
+    color: white;
+
+    padding: 10px 14px;
+
+    border-radius: 20px;
+
+    margin-left: 5px;
+}
+
+header td:last-child button:hover {
+    background: #272727;
+}
+
+
+/* =========================================================
+   MAIN NAVIGATION
+   ========================================================= */
+
+nav {
+    position: fixed;
+
+    top: 75px;
+    left: 0;
+
+    width: 220px;
+    height: calc(100vh - 75px);
+
+    padding: 20px 12px;
+
+    background: #0f0f0f;
+
+    border-right: 1px solid #272727;
+
+    overflow-y: auto;
+}
+
+nav h3 {
+    padding: 10px 14px;
+
+    font-size: 14px;
+    color: #aaaaaa;
+
+    text-transform: uppercase;
+}
+
+nav ul {
+    list-style: none;
+}
+
+nav li {
+    margin: 4px 0;
+}
+
+nav button {
+    width: 100%;
+
+    text-align: left;
+
+    padding: 12px 16px;
+
+    background: transparent;
+    color: #ffffff;
+
+    border-radius: 10px;
+
+    font-size: 14px;
+
+    transition: 0.2s;
+}
+
+nav button:hover {
+    background: #272727;
+}
+
+nav button:focus {
+    background: #333333;
+}
+
+
+/* =========================================================
+   MAIN CONTENT
+   ========================================================= */
+
+main {
+    margin-left: 220px;
+
+    padding: 30px;
+
+    max-width: 1600px;
+}
+
+
+/* =========================================================
+   HERO SECTION
+   ========================================================= */
+
+main > section:first-child {
+    background:
+        linear-gradient(
+            135deg,
+            #181818,
+            #111111
+        );
+
+    padding: 40px;
+
+    border: 1px solid #292929;
+
+    border-radius: 18px;
+
+    margin-bottom: 30px;
+}
+
+main > section:first-child h2 {
+    font-size: 36px;
+    margin-bottom: 12px;
+}
+
+main > section:first-child p {
+    color: #bdbdbd;
+    font-size: 16px;
+}
+
+main > section:first-child strong {
+    color: #ffffff;
+}
+
+main > section:first-child button {
+    margin-top: 20px;
+
+    padding: 13px 22px;
+
+    background: #ff0033;
+    color: white;
+
+    border-radius: 25px;
+
+    font-weight: bold;
+
+    transition: 0.2s;
+}
+
+main > section:first-child button:hover {
+    background: #cc0029;
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   DAILY LEARNING MISSION
+   ========================================================= */
+
+main > section:nth-of-type(2) {
+    background: #181818;
+
+    padding: 25px;
+
+    border-radius: 16px;
+
+    border: 1px solid #292929;
+
+    margin-bottom: 30px;
+}
+
+main > section:nth-of-type(2) h2 {
+    margin-bottom: 18px;
+}
+
+main > section:nth-of-type(2) article {
+    background: #101010;
+
+    padding: 20px;
+
+    border-radius: 12px;
+}
+
+main > section:nth-of-type(2) article h3 {
+    margin-bottom: 8px;
+}
+
+main > section:nth-of-type(2) article p {
+    color: #aaaaaa;
+}
+
+#dailyProgress {
+    width: 100%;
+    height: 10px;
+
+    margin: 15px 0;
+
+    accent-color: #ff0033;
+}
+
+main > section:nth-of-type(2) button {
+    background: #ffffff;
+    color: #000000;
+
+    padding: 10px 18px;
+
+    border-radius: 20px;
+
+    margin-top: 10px;
+
+    font-weight: bold;
+}
+
+
+/* =========================================================
+   SKILL JOURNEY
+   ========================================================= */
+
+main > section:nth-of-type(3) {
+    margin-bottom: 30px;
+}
+
+main > section:nth-of-type(3) > article {
+    display: inline-block;
+
+    vertical-align: top;
+
+    width: 48%;
+
+    margin: 0 1% 15px 0;
+
+    background: #181818;
+
+    padding: 22px;
+
+    border-radius: 15px;
+
+    border: 1px solid #292929;
+}
+
+main > section:nth-of-type(3) > article h3 {
+    margin-bottom: 15px;
+}
+
+main > section:nth-of-type(3) progress {
+    width: 100%;
+    height: 10px;
+
+    accent-color: #00c853;
+}
+
+main > section:nth-of-type(3) p {
+    color: #aaa;
+    margin: 8px 0;
+}
+
+main > section:nth-of-type(3) button {
+    margin-top: 10px;
+
+    padding: 10px 18px;
+
+    background: #272727;
+    color: white;
+
+    border-radius: 20px;
+}
+
+main > section:nth-of-type(3) button:hover {
+    background: #3f3f3f;
+}
+
+
+/* =========================================================
+   VIDEO SECTION
+   ========================================================= */
+
+#videoContainer {
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(280px, 1fr)
+        );
+
+    gap: 25px;
+}
+
+
+/* =========================================================
+   VIDEO CARD
+   ========================================================= */
+
+.video-card {
+    background: #181818;
+
+    border-radius: 14px;
+
+    overflow: hidden;
+
+    padding-bottom: 15px;
+
+    transition:
+        transform 0.25s,
+        background 0.25s;
+}
+
+.video-card:hover {
+    transform: translateY(-5px);
+
+    background: #222222;
+}
+
+
+/* =========================================================
+   VIDEO THUMBNAIL
+   ========================================================= */
+
+.video-card figure {
+    margin: 0;
+}
+
+.video-card video {
+    display: block;
+
+    width: 100%;
+    height: 190px;
+
+    object-fit: cover;
+
+    background: #000;
+}
+
+.video-card figcaption {
+    display: none;
+}
+
+
+/* =========================================================
+   VIDEO INFORMATION
+   ========================================================= */
+
+.video-card h3 {
+    padding: 15px 15px 5px;
+
+    font-size: 16px;
+
+    line-height: 1.4;
+}
+
+.video-card p {
+    padding: 0 15px;
+
+    color: #aaaaaa;
+
+    font-size: 13px;
+
+    margin-top: 5px;
+}
+
+
+/* =========================================================
+   VIDEO CARD BUTTONS
+   ========================================================= */
+
+.video-card button {
+    margin: 12px 0 0 12px;
+
+    padding: 8px 13px;
+
+    background: #272727;
+
+    color: white;
+
+    border-radius: 20px;
+
+    font-size: 12px;
+
+    transition: 0.2s;
+}
+
+.video-card button:hover {
+    background: #3f3f3f;
+}
+
+.video-card button:last-child {
+    background: #ff0033;
+}
+
+.video-card button:last-child:hover {
+    background: #cc0029;
+}
+
+
+/* =========================================================
+   WATCH PAGE
+   ========================================================= */
+
+#watchPage {
+    margin-left: 220px;
+
+    padding: 30px;
+
+    max-width: 1200px;
+}
+
+#watchPage > button:first-child {
+    background: #272727;
+
+    color: white;
+
+    padding: 10px 18px;
+
+    border-radius: 20px;
+
+    margin-bottom: 20px;
+}
+
+#watchTitle {
+    font-size: 28px;
+
+    margin-bottom: 8px;
+}
+
+#watchCreator {
+    color: #aaa;
+
+    margin-bottom: 20px;
+}
+
+#mainVideo {
+    width: 100%;
+    max-width: 1000px;
+
+    display: block;
+
+    background: #000;
+
+    border-radius: 12px;
+
+    margin-bottom: 15px;
+}
+
+
+/* =========================================================
+   WATCH PAGE ACTIONS
+   ========================================================= */
+
+#watchPage section {
+    margin-top: 25px;
+}
+
+#watchPage section button {
+    background: #272727;
+
+    color: white;
+
+    padding: 10px 16px;
+
+    border-radius: 20px;
+
+    margin-right: 8px;
+
+    transition: 0.2s;
+}
+
+#watchPage section button:hover {
+    background: #3f3f3f;
+}
+
+
+/* =========================================================
+   LEARN MODE
+   ========================================================= */
+
+#watchPage section h2 {
+    margin-bottom: 12px;
+}
+
+#watchPage section p {
+    color: #aaa;
+}
+
+
+/* =========================================================
+   CHALLENGE BOX
+   ========================================================= */
+
+#challengeBox {
+    background:
+        linear-gradient(
+            135deg,
+            #181818,
+            #101010
+        );
+
+    border: 1px solid #3a3a3a;
+
+    padding: 25px;
+
+    border-radius: 15px;
+
+    margin-top: 20px;
+}
+
+#challengeBox h2 {
+    color: #ffffff;
+}
+
+#challengeQuestion {
+    margin-bottom: 15px;
+}
+
+#challengeAnswer {
+    width: 100%;
+
+    background: #0b0b0b;
+
+    color: white;
+
+    border: 1px solid #444;
+
+    border-radius: 10px;
+
+    padding: 15px;
+
+    resize: vertical;
+
+    outline: none;
+}
+
+#challengeAnswer:focus {
+    border-color: #3ea6ff;
+}
+
+#challengeBox button {
+    margin-top: 12px;
+
+    background: #ff0033 !important;
+
+    padding: 11px 20px !important;
+}
+
+#challengeResult {
+    margin-top: 15px;
+
+    color: #00e676 !important;
+}
+
+
+/* =========================================================
+   NOTES
+   ========================================================= */
+
+#videoNotes {
+    width: 100%;
+
+    max-width: 900px;
+
+    min-height: 180px;
+
+    background: #111111;
+
+    color: white;
+
+    border: 1px solid #3a3a3a;
+
+    border-radius: 12px;
+
+    padding: 15px;
+
+    resize: vertical;
+
+    outline: none;
+}
+
+#videoNotes:focus {
+    border-color: #3ea6ff;
+}
+
+#notesStatus {
+    color: #00e676 !important;
+
+    margin-top: 10px;
+}
+
+
+/* =========================================================
+   COMMENTS
+   ========================================================= */
+
+#commentInput {
+    width: 100%;
+
+    max-width: 800px;
+
+    background: #111111;
+
+    color: white;
+
+    border: 1px solid #444;
+
+    border-radius: 10px;
+
+    padding: 14px;
+
+    resize: vertical;
+
+    outline: none;
+}
+
+#commentInput:focus {
+    border-color: #3ea6ff;
+}
+
+#comments {
+    margin-top: 25px;
+}
+
+#comments article {
+    background: #181818;
+
+    padding: 18px;
+
+    margin-bottom: 10px;
+
+    border-radius: 10px;
+}
+
+#comments h4 {
+    margin-bottom: 5px;
+}
+
+#comments p {
+    color: #cccccc !important;
+}
+
+
+/* =========================================================
+   LEARNING DASHBOARD
+   ========================================================= */
+
+#learningPage {
+    margin-left: 220px;
+
+    padding: 40px;
+
+    max-width: 1100px;
+}
+
+#learningPage > button {
+    background: #272727;
+
+    color: white;
+
+    padding: 10px 18px;
+
+    border-radius: 20px;
+
+    margin-bottom: 25px;
+}
+
+#learningPage h1 {
+    font-size: 32px;
+
+    margin-bottom: 30px;
+}
+
+#learningPage section {
+    background: #181818;
+
+    padding: 25px;
+
+    border-radius: 15px;
+
+    border: 1px solid #292929;
+
+    margin-bottom: 20px;
+}
+
+#learningPage section h2 {
+    margin-bottom: 15px;
+}
+
+#learningPage section p {
+    color: #aaa;
+}
+
+
+/* =========================================================
+   LEARNING SKILLS
+   ========================================================= */
+
+#learningPage ul {
+    list-style: none;
+}
+
+#learningPage li {
+    margin: 15px 0;
+
+    padding: 12px;
+
+    background: #111111;
+
+    border-radius: 10px;
+}
+
+#learningPage progress {
+    width: 200px;
+
+    height: 8px;
+
+    margin: 0 10px;
+
+    accent-color: #00c853;
+}
+
+
+/* =========================================================
+   HISTORY PAGE
+   ========================================================= */
+
+#historyPage,
+#watchLaterPage,
+#notificationPage,
+#profilePage,
+#createPage {
+    margin-left: 220px;
+
+    padding: 40px;
+
+    max-width: 1000px;
+}
+
+#historyPage > button,
+#watchLaterPage > button,
+#notificationPage > button,
+#profilePage > button,
+#createPage > button {
+    background: #272727;
+
+    color: white;
+
+    padding: 10px 18px;
+
+    border-radius: 20px;
+
+    margin-bottom: 25px;
+}
+
+
+/* =========================================================
+   PAGE HEADINGS
+   ========================================================= */
+
+#historyPage h1,
+#watchLaterPage h1,
+#notificationPage h1,
+#profilePage h1,
+#createPage h1 {
+    font-size: 32px;
+
+    margin-bottom: 25px;
+}
+
+
+/* =========================================================
+   LIST PAGES
+   ========================================================= */
+
+#historyPage ul,
+#watchLaterPage ul,
+#notificationPage ul,
+#profilePage ul {
+    list-style: none;
+}
+
+#historyPage li,
+#watchLaterPage li,
+#notificationPage li,
+#profilePage li {
+    background: #181818;
+
+    padding: 18px;
+
+    border-radius: 10px;
+
+    margin-bottom: 10px;
+
+    border: 1px solid #292929;
+}
+
+
+/* =========================================================
+   CREATE PAGE
+   ========================================================= */
+
+#createPage button:not(:first-child) {
+    display: inline-block;
+
+    padding: 15px 20px;
+
+    margin: 10px;
+
+    background: #272727;
+
+    color: white;
+
+    border-radius: 12px;
+
+    border: 1px solid #333;
+
+    transition: 0.2s;
+}
+
+#createPage button:not(:first-child):hover {
+    background: #ff0033;
+
+    transform: translateY(-3px);
+}
+
+
+/* =========================================================
+   PROFILE
+   ========================================================= */
+
+#profilePage > p {
+    color: #aaa;
+
+    margin-bottom: 10px;
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+footer {
+    margin-left: 220px;
+
+    padding: 40px 30px;
+
+    color: #777;
+
+    text-align: center;
+}
+
+footer p {
+    margin: 8px 0;
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   SCROLLBAR
+   ========================================================= */
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #0f0f0f;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #444;
+
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #666;
+}
+
+
+/* =========================================================
+   HIDDEN ELEMENTS
+   ========================================================= */
+
+[hidden] {
+    display: none !important;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1000px) {
+
+    nav {
+        width: 80px;
+    }
+
+    nav h3 {
+        display: none;
+    }
+
+    nav button {
+        text-align: center;
+
+        font-size: 0;
+    }
+
+    nav button:first-letter {
+        font-size: 20px;
+    }
+
+    main,
+    #watchPage,
+    #learningPage,
+    #historyPage,
+    #watchLaterPage,
+    #notificationPage,
+    #profilePage,
+    #createPage,
+    footer {
+        margin-left: 80px;
+    }
+
+    main > section:nth-of-type(3) > article {
+        width: 100%;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    header {
+        padding: 10px;
+    }
+
+    header h1 {
+        font-size: 18px;
+    }
+
+    header td:first-child {
+        display: none;
+    }
+
+    header td:nth-child(2) {
+        width: 70%;
+    }
+
+    header td:last-child {
+        width: 30%;
+    }
+
+    header td:last-child button {
+        font-size: 0;
+
+        padding: 8px;
+    }
+
+    #searchInput {
+        width: 100%;
+
+        padding: 10px;
+    }
+
+    nav {
+        position: fixed;
+
+        bottom: 0;
+        top: auto;
+
+        left: 0;
+
+        width: 100%;
+        height: 60px;
+
+        display: flex;
+
+        border-right: none;
+
+        border-top: 1px solid #292929;
+
+        padding: 5px;
+
+        z-index: 1000;
+    }
+
+    nav ul {
+        display: flex;
+
+        width: 100%;
+
+        justify-content: space-around;
+    }
+
+    nav li {
+        flex: 1;
+    }
+
+    nav button {
+        text-align: center;
+
+        padding: 10px 5px;
+    }
+
+    nav h3,
+    nav ul:nth-of-type(2) {
+        display: none;
+    }
+
+    main,
+    #watchPage,
+    #learningPage,
+    #historyPage,
+    #watchLaterPage,
+    #notificationPage,
+    #profilePage,
+    #createPage,
+    footer {
+        margin-left: 0;
+
+        padding: 20px;
+
+        padding-bottom: 90px;
+    }
+
+    main > section:first-child {
+        padding: 25px;
+    }
+
+    main > section:first-child h2 {
+        font-size: 26px;
+    }
+
+    #videoContainer {
+        grid-template-columns: 1fr;
+    }
+
+    .video-card video {
+        height: auto;
+    }
+
+    #mainVideo {
+        width: 100%;
+    }
+
+    #watchTitle {
+        font-size: 22px;
+    }
+
+    #learningPage section {
+        padding: 18px;
+    }
+
+    #learningPage progress {
+        width: 120px;
+    }
+
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+   ========================================================= */
+
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+    outline: 2px solid #3ea6ff;
+
+    outline-offset: 2px;
+}
+
+
+/* =========================================================
+   ANIMATIONS
+   ========================================================= */
+
+@keyframes fadeIn {
+
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+.video-card {
+    animation: fadeIn 0.4s ease;
+}
